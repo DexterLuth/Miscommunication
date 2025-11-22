@@ -1,0 +1,34 @@
+The following requirements must be disclosed to the client. These requirements are categorized by the regulatory mandate that governs the product (Loan vs. LOC) and the UDAAP principles requiring fair comparison and risk mitigation.
+
+## I. Statutory Disclosures for the Closed-End Personal Loan (Regulation Z, 1026.18)
+
+Since the customer's goal aligns best with the structure of a closed-end Personal Loan (fixed term and fixed payoff), the following statutory disclosures are mandatory if this product is chosen or specifically quoted:
+
+### A. Cost and Finance Disclosures
+1.  **Annual Percentage Rate (APR):** The cost of credit expressed as a yearly rate.
+2.  **Finance Charge:** The total dollar amount the credit will cost the consumer (total interest and fees paid over the life of the loan).
+3.  **Amount Financed:** The principal loan amount provided to the consumer (i.e., the $28,000 for consolidation).
+4.  **Total of Payments:** The total amount the customer will have paid after making all scheduled payments (Amount Financed + Finance Charge).
+
+### B. Payment Schedule and Term Disclosures
+5.  **Payment Schedule:** A complete schedule showing the number, amounts, and timing of payments required. *(This directly addresses the customer's priority to "know exactly when the balance will hit zero.")*
+6.  **Fixed Rate Guarantee:** Clear disclosure that the interest rate is fixed and will not change over the term of the loan, or disclosure of any limited circumstances under which the rate could change (e.g., default rate provisions).
+7.  **Prepayment Information:** Disclosure of whether a prepayment penalty applies (if any). If no penalty applies, the banker must confirm the customer can pay off the loan early without penalty.
+8.  **Late Payment Charges:** Disclosure of the amount or method of determining any charges assessed for late payments.
+
+## II. Statutory Disclosures for the Open-End Line of Credit (Regulation Z, 1026.6)
+
+If the Line of Credit (LOC) is offered as an alternative, the bank must provide initial disclosures that highlight the structural differences that undermine the customer's goal of "fixed payoff timing" and "predictability."
+
+9.  **Interest Rate Calculation and Variability:** Clear disclosure of the method used to determine the variable rate (e.g., Prime Rate plus a specified margin) and an explicit statement that the rate **may increase** during the repayment period. *(This directly contrasts the LOC against the customer’s desire for a fixed rate.)*
+10. **Fees and Charges:** Disclosure of any annual fees, transaction fees, application fees, or penalty fees associated with the LOC.
+11. **Minimum Payment Requirements:** Clear explanation of how the minimum periodic payment is determined and the percentage of principal it covers, emphasizing that the lack of a fixed amortization schedule means the payoff date is uncertain and dependent on consumer payment behavior.
+
+## III. UDAAP Comparative Disclosures (Mandatory to Avoid Deception)
+
+To ensure the banker avoids misleading the client and adheres to UDAAP standards, the following comparative risks and material information must be explicitly disclosed, especially when comparing the LOC to the fixed-rate loan.
+
+12. **Maturity Date Contrast:** The banker must explicitly state that the Personal Loan has a **fixed maturity date** (e.g., 60 months, 84 months) where the debt is guaranteed to be zero, while the LOC has **no fixed maturity date**, relying solely on the consumer's discipline to pay down principal.
+13. **Risk Disclosure on Variability:** The banker must disclose the **material risk** that an increase in the index rate (e.g., Prime Rate) could lead to significantly higher monthly payments or a longer repayment timeframe on the LOC, directly contradicting the customer's need for **predictability**.
+14. **Total Cost Emphasis:** If quoting different loan terms (e.g., a 5-year vs. a 7-year loan), the banker must disclose and emphasize the **Total Finance Charge** for both options, ensuring the customer understands the total dollar cost implications of a longer repayment period, rather than focusing solely on the lowest monthly payment.
+15. **Material Omissions:** Disclosure of any other terms or fees that are material to the customer’s decision but are not immediately obvious (e.g., the requirement for collateral, if applicable, or potential limitations on the use of the funds).
