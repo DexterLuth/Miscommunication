@@ -1,4 +1,4 @@
-import  './Entry.css'
+import  './TranscriptTable.css'
 import {ChevronDown} from 'lucide-react';
 import { useState } from 'react';
 
@@ -6,11 +6,8 @@ function Entry(props){
   const callerid = props.callerid;
   const agentid = props.agentid;
   const transcript = props.transcript;
-  
 
   const [open, setOpen] = useState(false);
-
-
 
     return (
         <div class="wrapper">
@@ -43,7 +40,7 @@ function Entry(props){
                       </div>
                     </div>
                     
-                    <div class="detailItem">
+                    <div class="transcriptInfo">
                       <div>
                         <p class="detailLabel">D1</p>
                         <p class="detailValue">V!</p>
@@ -52,7 +49,6 @@ function Entry(props){
                       <div>
                         <p class="detailLabel">D1</p>
                         <p class="detailValue">V!</p>
-                        
                       </div>
                     </div>
                     
@@ -65,6 +61,15 @@ function Entry(props){
 
 
 export default function TranscriptTable(){
+
+  function boldWords(text) {
+    const words = ['Client', 'Banker']
+  const regex = new RegExp(`\\b(${words.join("|")})\\b`, "gi");
+
+  return text.split(regex).map((part, i) =>
+    words.includes(part) ? <strong key={i}>{part}</strong> : part
+  );
+  }
   const transcripts = [
     {
       calledir : "C182",
@@ -121,21 +126,26 @@ Banker: Once we receive the full package, we will treat the file as an applicati
 
 Client: That gives me a realistic view of what to expect. Let’s move ahead with the information request.
 
-Banker: Great. I will send you the checklist today so we can begin the process in a fully compliant and transparent way.`
+Banker: Great. I will send you the checklist today so we can begin the process in a fully compliant and transparent way.`,
+      risk : 0.76
     }
 
   ]
 
-
-
   return(
     <>
-      <div class="container">
+      <div class="table">
+        <div class="header">
+            <div class="headerCell">Name</div>
+            <div class="headerCell">Role</div>
+            <div class="headerCell"></div>
+        </div>
           {transcripts.map((item)=>(
             <Entry 
               callerid={item.callerid}
               agentid={item.agentid}
-              transcript={item.transcript}
+              transcript={boldWords(item.transcript)}
+              risk={item.risk}
             />
           ))}
       </div>

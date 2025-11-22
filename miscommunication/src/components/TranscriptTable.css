@@ -1,37 +1,48 @@
-.box{
-    margin-left: auto;
-    margin-right: auto;
-    background-color: pink;
-    width: 100rem;
-    height: 10rem;
-    color:white;
-}
-.container {
-    /* min-height: 100vh; */
-    height: 50rem;
-    width: 90rem;
+.table{
     align-self: center;
     margin-left: auto;
     margin-right: auto;
-    background: linear-gradient(to bottom right, #f8fafc, #e2e8f0);
-    padding: 32px;
+    background-color: white;
+    width: 90em;
+    color:white;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+.header{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 180px;
+    text-align: left;
+    border: none;
+    padding: 16px 24px;
+    margin: 0
+}
+.headerCell{
+    color:black;
+    font-weight: 500;
+}
+.container {
+    /* min-height: 100vh; */
+    width: 100%;
 }
 .wrapper {
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .rowButton{
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 80px;
+    grid-template-columns: 1fr 1fr 80px;
     padding: 16px 24px;
     text-align: left;
     border: none;
     background-color: white;
     cursor: pointer;
     transition: background-color 0.2s;
-    color: black
+    color: black;
+    margin: 0
 }
 .cell{
     color: '#1e293b';
@@ -81,5 +92,10 @@
     margin: 0;
     white-space: pre-line;
     text-align: left;
+}
+.transcriptInfo{
+    width: 100%;
+    display: flex;
+    flex: row;
 }
 
