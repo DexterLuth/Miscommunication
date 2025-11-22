@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../supabaseClient";
 import './Stats.css';
+import StatsTable from "./StatsTable";
 
-function Stats() {
+export default function Stats() {
     const [stats, setStats] = useState([{
         agent_id: null,
         first_name: null,
@@ -42,15 +43,7 @@ function Stats() {
         <>
             <h1>Stats Page</h1>
             
-            {stats.map((stat, index) => (
-                <div key={index} className="stat-card">
-                    <h2>Agent: {stat.first_name} {stat.last_name}</h2>
-                    <p>Total Interactions: {stat.interaction_count || 0}</p>
-                    <p>Average Score: {stat.average_score != null ? stat.average_score.toFixed(2) : "N/A"}</p>
-                </div>
-            ))}
+            <StatsTable stats={stats} />
         </>
     );
 }
-
-export default Stats;
