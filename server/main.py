@@ -10,7 +10,7 @@ model = genai.GenerativeModel("gemini-flash-latest")
 with open("prompt.txt", "r", encoding="utf-8") as f:
     conversation = f.read()
 
-output_files = ["layer1.txt", "layer2.txt", "layer3.txt", "layer4.txt", "response.txt"]
+output_files = ["Relevant.txt", "Clarity.txt", "Friendliness.txt", "Assurance.txt", "Accurate.txt", "response.txt"]
 for file in output_files:
     open(file, "w").close()
 
@@ -22,39 +22,43 @@ def run_layer(prompt, instruction, filename):
 
 # Layer 1: Extract intent, keywords
 layer1_instruction = (
-    "Stage 1: What is the customer asking for?\n"
-    "Extract the customer's intent and keywords from the following conversation."
+    "1. Relevance to the Question (Yes/No)?\n"
+    "Evaluate whether the banker’s response directly addresses the client’s question. Answer only Yes or No. Ignore friendliness, tone, or partial explanations — focus strictly on whether the banker’s reply matches the client’s inquiry."
 )
-layer1_output = run_layer(conversation, layer1_instruction, "layer1.txt")
+layer1_output = run_layer(conversation, layer1_instruction, "Relevant.txt")
 
 # Layer 2: Retrieve regulations, check for contradictions
 layer2_instruction = (
-    "Stage 2: What regulations apply?\n"
+    "2. Clarity of Explanation (Score 1–10)\n"
     "Given the extracted intent and keywords, retrieve relevant regulations from a knowledge base (assume you have access), and check if anything the banker said misleads or contradicts those regulations."
 )
-layer2_output = run_layer(layer1_output, layer2_instruction, "layer2.txt")
+layer2_output = run_layer(conversation, layer2_instruction, "Clarity.txt")
 
 # Layer 3: Get requirements
 layer3_instruction = (
-    "Stage 3: What must be disclosed?\n"
-    "Based on the previous analysis, list all requirements that must be disclosed to the client."
+    "3. Friendliness (Score 1–5)\n"
+    "Rate how friendly and approachable the banker sounded. Evaluate warmth, politeness, and positive interpersonal tone. Provide a score from 1 to 5, where 1 = unfriendly and 5 = very friendly."
 )
-layer3_output = run_layer(layer2_output, layer3_instruction, "layer3.txt")
+layer3_output = run_layer(conversation, layer3_instruction, "Friendliness.txt")
 
 # Layer 4: Check compliance, track conversation
 layer4_instruction = (
-    "Stage 4: Did agent include all requirements?\n"
-    "Check if the banker included all required disclosures and track compliance throughout the conversation. "
-    "Here is the original conversation transcript, followed by the list of requirements."
+    "4. Assurance of Understanding (Score 1–10)\n"
+    "Rate how effectively the banker ensured the client understood the information. Look for confirmation questions, checks for understanding, clear summarization, or invitations for clarification. Score from 1 to 10, where 1 = no effort and 10 = strong effort to verify understanding."
 )
-layer4_input = f"Conversation transcript:\n{conversation}\n\nRequirements from previous analysis:\n{layer3_output}"
-layer4_output = run_layer(layer4_input, layer4_instruction, "layer4.txt")
+layer4_output = run_layer(conversation, layer4_instruction, "Assurance.txt")
 
 # Layer 5: Generate score and reasoning
 layer5_instruction = (
-    "Stage 5: Rate the risk and explain why.\n"
-    "Based on all previous analysis, generate a score for the banker based on how clear his communication was and explain your reasoning. We are trying to avoid miscommunication. The score is out of 10. Provide pointers on certain parts so that the baker knows where to improve."
+    "5. Accuracy of Explanation (Score 1–10)\n"
+    "Evaluate how factually accurate the banker’s explanation is, based on standard banking terminology and practices. Identify whether the information given is correct, partially correct, or incorrect. Provide a score from 1 to 10, where 1 = inaccurate and 10 = fully accurate."
 )
-final_output = run_layer(layer4_output, layer5_instruction, "response.txt")
+layer5_output = run_layer(conversation, layer5_instruction, "Accurate.txt")
 
-print("Pipeline complete. See layer1.txt, layer2.txt, layer3.txt, layer4.txt, and response.txt for outputs.")
+layer6_instruction = (
+    "6. Structure of Explanation (Score 1–10)\n"
+    "Rate how well the banker organized the explanation. Assess logical sequencing, coherence, clear step-by-step flow, and lack of topic jumping. Provide a score from 1 to 10, where 1 = poorly structured and 10 = highly structured."
+)
+layer6_output = run_layer(conversation, layer6_instruction, "Scruture.txt")
+
+print("Pipeline complete")
