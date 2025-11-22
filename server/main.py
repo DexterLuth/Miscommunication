@@ -53,7 +53,7 @@ layer4_output = run_layer(layer4_input, layer4_instruction, "layer4.txt")
 # Layer 5: Generate score and reasoning
 layer5_instruction = (
     "Stage 5: Rate the risk and explain why.\n"
-    "Based on all previous analysis, generate a score for the banker and explain your reasoning. The score is out of 10"
+    "Based on all previous analysis, generate a score for the banker based on how clear his communication was and explain your reasoning. We are trying to avoid miscommunication. The score is out of 10. Provide pointers on certain parts so that the baker knows where to improve."
 )
 final_output = run_layer(layer4_output, layer5_instruction, "response.txt")
 
