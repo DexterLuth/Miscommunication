@@ -14,8 +14,13 @@ def get_agents():
 
 @app.route("/interactions", methods=["GET"])
 def get_interactions():
-    response = supabase.table("Interaction").select("*").execute()
+    agent_id = request.args.get("agent_id")
+    if agent_id:
+        response = supabase.table("Interaction").select("*").eq("agent_id", agent_id).execute()
+    else:
+        response = supabase.table("Interaction").select("*").execute()
     return jsonify(response.data)
+
 
 
 
