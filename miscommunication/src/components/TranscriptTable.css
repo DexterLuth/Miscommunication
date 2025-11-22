@@ -2,7 +2,7 @@
     align-self: center;
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
+    background-color: pink;
     width: 90em;
     color:white;
     border-radius: 8px;
@@ -16,7 +16,10 @@
     text-align: left;
     border: none;
     padding: 16px 24px;
-    margin: 0
+    margin: 0;
+    background-color: #f8fafc;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 .headerCell{
     color:black;
@@ -63,7 +66,15 @@
     background-color: #f8fafc;
     padding: 20px 24px;
     border-top: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    max-height: 0;
+    display: none;
   }
+.expandedContent.open{
+    display:block;
+    max-height: none;
+}
 .detailsGrid{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -96,6 +107,23 @@
 .transcriptInfo{
     width: 100%;
     display: flex;
-    flex: row;
+    flex: column;
+    overflow: hidden;
 }
-
+.chartWrapper{
+    width: 35rem;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+}
+.pie{
+    margin-left: auto;
+    margin-right: auto;
+}

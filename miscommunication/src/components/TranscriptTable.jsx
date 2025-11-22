@@ -1,6 +1,148 @@
 import  './TranscriptTable.css'
-import {ChevronDown} from 'lucide-react';
-import { useState } from 'react';
+import {AlignCenter, ChevronDown} from 'lucide-react';
+import React, { useState } from 'react';
+import { PieChart, Pie, Cell, Legend, Tooltip} from 'recharts';
+
+function DoughnutChart(props) {
+  const data = [
+    { name: 'Safe', value: parseInt(props.safe * 10)},
+    { name: 'Risky', value: parseInt((10 - props.safe) * 10)}
+  ];
+
+  const COLORS = {
+    Safe: '#22c55e',
+    Risky: '#ef4444'
+  };
+
+  const renderCustomLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }) => {
+    const RADIAN = Math.PI / 180;
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+    return (
+      <text 
+        x={x} 
+        y={y} 
+        fill="white" 
+        textAnchor={x > cx ? 'end' : 'start'} 
+        // textAnchor={'end'}
+        dominantBaseline="central"
+        style={{ fontSize: '18px', fontWeight: 'bold' }}
+      >
+        {`${(percent * 100).toFixed(0)}%`}
+      </text>
+    );
+  };
+
+  return (
+    <div style={styles.container}>
+      <div class="chartWrapper">
+        <h1 style={styles.title}>Safety Status</h1>
+        
+        <div style={styles.chartContainer}>
+            <PieChart
+              width={400}
+              height={400}>
+              <Pie
+                data={data}
+                cx={200}
+                cy={200}
+                labelLine={false}
+                label={renderCustomLabel}
+                outerRadius={150}
+                innerRadius={80}
+                dataKey="value"
+              >
+                {data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[entry.name]} />
+                ))}
+              </Pie>
+              <Tooltip />
+              <Legend 
+                verticalAlign="bottom" 
+                height={36}
+                iconType="circle"
+              />
+            </PieChart>
+        </div>
+
+        <div style={styles.statsContainer}>
+          <div style={styles.statCard}>
+            <div style={{...styles.statDot, backgroundColor: COLORS.Safe}}></div>
+            <div>
+              <p style={styles.statLabel}>Safe</p>
+              <p style={styles.statValue}>{data[0].value}%</p>
+            </div>
+          </div>
+          
+          <div style={styles.statCard}>
+            <div style={{...styles.statDot, backgroundColor: COLORS.Risky}}></div>
+            <div>
+              <p style={styles.statLabel}>Risk</p>
+              <p style={styles.statValue}>{data[1].value}%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const styles = {
+  container: {
+    padding: '32px',
+  },
+  title: {
+    fontSize: '32px',
+    fontWeight: 'bold',
+    color: '#1e293b',
+    marginBottom: '32px',
+    textAlign: 'center',
+    margin: '0 0 32px 0'
+  },
+  chartContainer: {
+    width: '100%',
+    height: '25rem',
+    marginBottom: '32px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  statsContainer: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: '16px',
+    marginTop: '24px'
+  },
+  statCard: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '12px',
+    padding: '20px',
+    backgroundColor: '#f8fafc',
+    borderRadius: '8px',
+    border: '1px solid #e2e8f0'
+  },
+  statDot: {
+    width: '16px',
+    height: '16px',
+    borderRadius: '50%',
+    flexShrink: 0
+  },
+  statLabel: {
+    fontSize: '20px',
+    color: '#64748b',
+    margin: '0 0 4px 0',
+    fontWeight: '500'
+  },
+  statValue: {
+    fontSize: '24px',
+    fontWeight: 'bold',
+    color: '#1e293b',
+    margin: 0
+  }
+};
 
 function Entry(props){
   const callerid = props.callerid;
@@ -30,8 +172,8 @@ function Entry(props){
                   />
                 </div>
               </button>
-              {(open) ? 
-              <div class="expandedContent">
+              {/* {(open) ?  */}
+              <div className={`expandedContent ${open ? 'open' : ''}`}>
                   <div class="detailsGrid">
                     <div class="detailItem">
                       <div>
@@ -41,20 +183,14 @@ function Entry(props){
                     </div>
                     
                     <div class="transcriptInfo">
-                      <div>
-                        <p class="detailLabel">D1</p>
-                        <p class="detailValue">V!</p>
-                        
-                      </div>
-                      <div>
-                        <p class="detailLabel">D1</p>
-                        <p class="detailValue">V!</p>
-                      </div>
+                      <DoughnutChart 
+                        safe={props.safe}
+                      />
                     </div>
                     
                   </div>
                 </div>
-                : null}
+                {/* : null} */}
           </div>
     )
 }
@@ -72,7 +208,7 @@ export default function TranscriptTable(){
   }
   const transcripts = [
     {
-      calledir : "C182",
+      callid : "C182",
       agentid : "A47",
       transcript : `Banker: Good afternoon. Before we start, I need to be clear that everything we discuss today is preliminary and non-binding. These are indicative terms only and are all subject to full credit approval and final documentation. This is not a commitment to lend.
 
@@ -127,7 +263,7 @@ Banker: Once we receive the full package, we will treat the file as an applicati
 Client: That gives me a realistic view of what to expect. Let’s move ahead with the information request.
 
 Banker: Great. I will send you the checklist today so we can begin the process in a fully compliant and transparent way.`,
-      risk : 0.76
+      safe : 7.6
     }
 
   ]
@@ -142,10 +278,10 @@ Banker: Great. I will send you the checklist today so we can begin the process i
         </div>
           {transcripts.map((item)=>(
             <Entry 
-              callerid={item.callerid}
+              callerid={item.callid}
               agentid={item.agentid}
               transcript={boldWords(item.transcript)}
-              risk={item.risk}
+              safe={item.safe}
             />
           ))}
       </div>
