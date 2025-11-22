@@ -2,6 +2,10 @@ import { use, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+
+import TranscriptTable from './components/TranscriptTable.jsx'
+import Stats from './components/Stats.jsx'
+
 import { useNavigate } from 'react-router-dom'
 
 function App() {
