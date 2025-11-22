@@ -22,4 +22,4 @@ response = model.generate_content(f"{system_instruction}\n\n{user_prompt}")
 with open("response.txt", "w", encoding="utf-8") as out_file:
     out_file.write(response.text)
 
-print("Read output.txt for the model's response.")
+print("Read response.txt for the model's response.")
