@@ -1,4 +1,4 @@
-import  './Entry.css'
+import  './TranscriptTable.css'
 import {ChevronDown} from 'lucide-react';
 import { useState } from 'react';
 
@@ -6,11 +6,8 @@ function Entry(props){
   const callerid = props.callerid;
   const agentid = props.agentid;
   const transcript = props.transcript;
-  
 
   const [open, setOpen] = useState(false);
-
-
 
     return (
         <div class="wrapper">
@@ -126,11 +123,15 @@ Banker: Great. I will send you the checklist today so we can begin the process i
 
   ]
 
-
-
   return(
     <>
-      <div class="container">
+      <div class="table">
+        <div class="header">
+            <div class="headerCell">Name</div>
+            <div class="headerCell">Role</div>
+            <div class="headerCell"></div>
+        </div>
+        <div class="zr">
           {transcripts.map((item)=>(
             <Entry 
               callerid={item.callerid}
@@ -138,6 +139,7 @@ Banker: Great. I will send you the checklist today so we can begin the process i
               transcript={item.transcript}
             />
           ))}
+        </div>
       </div>
     </>
   )
