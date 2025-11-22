@@ -7,6 +7,18 @@ app = Flask(__name__)
 def home():
     return {"message": "Supabase + Flask connected!"}
 
+@app.route("/agents", methods=["GET"])
+def get_agents():
+    response = supabase.table("Agent").select("*").execute()
+    return jsonify(response.data)
+
+@app.route("/interactions", methods=["GET"])
+def get_interactions():
+    response = supabase.table("Interaction").select("*").execute()
+    return jsonify(response.data)
+
+
+
 
 if __name__ == "__main__":
     import os
