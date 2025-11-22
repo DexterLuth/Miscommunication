@@ -1,7 +1,3 @@
-output_files = ["layer1.txt", "layer2.txt", "layer3.txt", "layer4.txt", "response.txt"]
-# Clear all output files at the start
-for file in output_files:
-    open(file, "w").close()
 from dotenv import load_dotenv
 import os
 import google.generativeai as genai
@@ -14,6 +10,10 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 # Read the prompt from prompt.txt
 with open("prompt.txt", "r", encoding="utf-8") as f:
     conversation = f.read()
+
+output_files = ["layer1.txt", "layer2.txt", "layer3.txt", "layer4.txt", "response.txt"]
+for file in output_files:
+    open(file, "w").close()
 
 def run_layer(prompt, instruction, filename):
     response = model.generate_content(f"{instruction}\n\n{prompt}")
