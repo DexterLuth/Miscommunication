@@ -1,34 +1,39 @@
-The following requirements must be disclosed to the client. These requirements are categorized by the regulatory mandate that governs the product (Loan vs. LOC) and the UDAAP principles requiring fair comparison and risk mitigation.
+Based on the analysis in Stage 2, the following requirements and mandatory notices must be formally disclosed to the client. These disclosures manage expectations regarding timelines, documentation, and the regulatory constraints on the final loan structure.
 
-## I. Statutory Disclosures for the Closed-End Personal Loan (Regulation Z, 1026.18)
+---
 
-Since the customer's goal aligns best with the structure of a closed-end Personal Loan (fixed term and fixed payoff), the following statutory disclosures are mandatory if this product is chosen or specifically quoted:
+## Stage 3: Mandatory Disclosures to the Client
 
-### A. Cost and Finance Disclosures
-1.  **Annual Percentage Rate (APR):** The cost of credit expressed as a yearly rate.
-2.  **Finance Charge:** The total dollar amount the credit will cost the consumer (total interest and fees paid over the life of the loan).
-3.  **Amount Financed:** The principal loan amount provided to the consumer (i.e., the $28,000 for consolidation).
-4.  **Total of Payments:** The total amount the customer will have paid after making all scheduled payments (Amount Financed + Finance Charge).
+### I. Mandatory Legal Notices and Policies
 
-### B. Payment Schedule and Term Disclosures
-5.  **Payment Schedule:** A complete schedule showing the number, amounts, and timing of payments required. *(This directly addresses the customer's priority to "know exactly when the balance will hit zero.")*
-6.  **Fixed Rate Guarantee:** Clear disclosure that the interest rate is fixed and will not change over the term of the loan, or disclosure of any limited circumstances under which the rate could change (e.g., default rate provisions).
-7.  **Prepayment Information:** Disclosure of whether a prepayment penalty applies (if any). If no penalty applies, the banker must confirm the customer can pay off the loan early without penalty.
-8.  **Late Payment Charges:** Disclosure of the amount or method of determining any charges assessed for late payments.
+These disclosures relate to the institution’s compliance obligations and must be provided to the client in writing.
 
-## II. Statutory Disclosures for the Open-End Line of Credit (Regulation Z, 1026.6)
+| Requirement Category | Disclosure Requirement | Regulatory Source |
+| :--- | :--- | :--- |
+| **A. Privacy Notice** | The bank must provide a written **Privacy Policy Notice** (Reg P) detailing how the client’s Non-Public Personal Information (NPPI) collected during the **Underwriting** process will be protected, used, and potentially shared with necessary third parties (e.g., appraisers, legal counsel for **Due Diligence**). | GLBA / Regulation P |
+| **B. Anti-Money Laundering (AML)** | The bank must disclose that verification of the legal entity's identity is mandatory and requires compliance with the BSA/CDD Rule. This includes the collection and verification of identifying information for all **Beneficial Owners** (individuals holding 25% or more equity) and the single control person of the business. | BSA / CDD Rule (FinCEN) |
+| **C. Collateral Perfection** | The client must be informed that the loan structure requires the bank to establish and maintain a **First-position security interest** in the agreed-upon collateral. This involves the client cooperating with the bank's **Legal Due Diligence** and the filing of UCC financing statements (UCC-1 filings) in the appropriate jurisdictions. | Uniform Commercial Code (UCC) |
+| **D. Adverse Action Notice** | The client must be informed that if the application is ultimately denied or approved with conditions significantly different from those requested (counteroffer), the bank is legally required to provide an Adverse Action Notice detailing the reasons for the decision. | Regulation B (ECOA) |
 
-If the Line of Credit (LOC) is offered as an alternative, the bank must provide initial disclosures that highlight the structural differences that undermine the customer's goal of "fixed payoff timing" and "predictability."
+### II. Application and Timeline Requirements (Regulation B & BSA)
 
-9.  **Interest Rate Calculation and Variability:** Clear disclosure of the method used to determine the variable rate (e.g., Prime Rate plus a specified margin) and an explicit statement that the rate **may increase** during the repayment period. *(This directly contrasts the LOC against the customer’s desire for a fixed rate.)*
-10. **Fees and Charges:** Disclosure of any annual fees, transaction fees, application fees, or penalty fees associated with the LOC.
-11. **Minimum Payment Requirements:** Clear explanation of how the minimum periodic payment is determined and the percentage of principal it covers, emphasizing that the lack of a fixed amortization schedule means the payoff date is uncertain and dependent on consumer payment behavior.
+These requirements govern how the client's requested **Timeline** for a decision is legally managed.
 
-## III. UDAAP Comparative Disclosures (Mandatory to Avoid Deception)
+1.  **Definition of a Completed Application:** The bank must clearly define what constitutes a **Completed Application**. The 30-day clock for a lending decision (as requested by the customer) *does not* begin until the bank has received all required documentation, including:
+    *   Financial statements and tax returns for the legal entity.
+    *   Completed and signed Beneficial Ownership forms (BSA/CDD).
+    *   Required information on the proposed collateral (e.g., existing liens, appraisal needs).
 
-To ensure the banker avoids misleading the client and adheres to UDAAP standards, the following comparative risks and material information must be explicitly disclosed, especially when comparing the LOC to the fixed-rate loan.
+2.  **Guarantees and Spousal Requirements:** The bank must disclose that any requirement for a **Personal Guarantee** must comply with ECOA standards. The bank cannot automatically require the signature of a non-applicant spouse solely based on policy, unless the spouse is a joint applicant or their signature is necessary under state law to perfect the bank's lien on jointly-owned collateral.
 
-12. **Maturity Date Contrast:** The banker must explicitly state that the Personal Loan has a **fixed maturity date** (e.g., 60 months, 84 months) where the debt is guaranteed to be zero, while the LOC has **no fixed maturity date**, relying solely on the consumer's discipline to pay down principal.
-13. **Risk Disclosure on Variability:** The banker must disclose the **material risk** that an increase in the index rate (e.g., Prime Rate) could lead to significantly higher monthly payments or a longer repayment timeframe on the LOC, directly contradicting the customer's need for **predictability**.
-14. **Total Cost Emphasis:** If quoting different loan terms (e.g., a 5-year vs. a 7-year loan), the banker must disclose and emphasize the **Total Finance Charge** for both options, ensuring the customer understands the total dollar cost implications of a longer repayment period, rather than focusing solely on the lowest monthly payment.
-15. **Material Omissions:** Disclosure of any other terms or fees that are material to the customer’s decision but are not immediately obvious (e.g., the requirement for collateral, if applicable, or potential limitations on the use of the funds).
+3.  **Mandatory Identity Verification:** The client must be notified that the AML/CDD requirements (identifying Beneficial Owners) are mandatory compliance steps that **must be completed and verified prior to finalizing the Term Sheet** and initiating full credit **Underwriting**. Failure to provide this information will prevent the application from being considered "completed."
+
+### III. Substantive Risk and Underwriting Constraints
+
+These disclosures manage the client's expectations regarding the flexibility of **Covenants** and maximum **Leverage**.
+
+1.  **Regulatory Constraint on Leverage:** The bank must disclose that the requested financing structure is subject to regulatory guidance on **Leveraged Lending**. The negotiation of the **Maximum Leverage** ratio (**Debt-to-EBITDA**) and **DSCR** will be constrained by the bank's internal credit policy, which is guided by interagency standards often flagging debt levels above 4.0x or 5.0x as heightened risk.
+
+2.  **Required Exit Strategy:** The bank must disclose that prudent **Underwriting** requires a clear, defined, and credible secondary source of repayment or exit strategy (e.g., asset sale, refinancing plan) for highly leveraged structures.
+
+3.  **Required Covenants and Reporting:** The client must be informed that the final loan agreement will contain mandatory affirmative and negative **Covenants** (e.g., limitations on future indebtedness, asset sales, and distributions) to protect the bank's collateral and maintain the business's financial health, limiting the customer's "maximal flexibility." Regular financial reporting will also be a required covenant.

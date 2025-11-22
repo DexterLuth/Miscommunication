@@ -1,13 +1,50 @@
-**Customer Intent:**
-The customer is seeking to **restructure and consolidate approximately $28,000 of high-interest debt** (ranging from 14% to 19%) into a more manageable financial product. Their primary goal is **predictability and a fixed payoff schedule** (knowing exactly when the balance will hit zero), leading them to favor a personal loan over a line of credit.
+## Stage 1: What is the customer asking for?
 
-**Key Keywords & Metrics:**
-*   Restructure debt
-*   Debt consolidation
-*   $28,000 (total amount)
-*   14% to 19% (current rates)
-*   Line of Credit (LOC)
-*   Personal Loan
-*   Predictability (as the primary priority)
-*   Fixed payoff timing
-*   Monthly payment
+### Customer Intent
+
+The customer is seeking **commercial financing** to support two primary objectives:
+
+1.  **Immediate Business Expansion.**
+2.  **Maintaining sufficient future leverage/flexibility** to execute future acquisitions, requiring careful negotiation of loan covenants.
+
+The customer is currently in the information-gathering stage, seeking a **realistic structure, pricing, collateral requirements, constraints (covenants), and timeline** before formally submitting a complete application. They have ultimately decided to move ahead with the information request to initiate the process.
+
+***
+
+### Keywords and Key Terms Extracted
+
+**1. Financing Products & Structure:**
+*   Term Loan (500k to 750k range)
+*   Revolving Line of Credit (Revolver/250k range)
+*   Amortized (5 to 7 years)
+*   Underwriting
+*   Funding
+
+**2. Pricing and Fees:**
+*   Fixed Rate (6.5% to 7.5%)
+*   Floating Rate
+*   Origination Fee (1%)
+*   Commitment/Unused Line Fee (0.25% to 0.50%)
+*   Third-Party Costs (Appraisal, Legal, Due Diligence)
+
+**3. Collateral and Security:**
+*   Collateral
+*   First-position security interest
+*   General Security Agreement
+*   Personal Guarantee
+*   Impairment of Collateral
+
+**4. Constraints and Risk (Crucial to Client’s Goal):**
+*   Covenants (Financial Covenants, Negative Covenants)
+*   Debt Service Coverage Ratio (DSCR) (Minimum 1.20)
+*   Maximum Leverage / Debt-to-EBITDA
+*   Regulatory Guidance on Leveraged Lending
+*   Lender Consent (for additional debt, asset sales, dividends)
+
+**5. Process and Compliance:**
+*   Completed Application
+*   Customer Identification Program (CIP)
+*   Beneficial Owners (25% or more)
+*   Term Sheet
+*   Regulatory points (Regulation B, Privacy Policy)
+*   Timeline (30 to 45 days to funding)
