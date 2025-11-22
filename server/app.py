@@ -9,16 +9,16 @@ def home():
 
 @app.route("/agents", methods=["GET"])
 def get_agents():
-    response = supabase.table("Agent").select("*").execute()
+    response = supabase.table("agent").select("*").execute()
     return jsonify(response.data)
 
 @app.route("/interactions", methods=["GET"])
 def get_interactions():
     agent_id = request.args.get("agent_id")
     if agent_id:
-        response = supabase.table("Interaction").select("*").eq("agent_id", agent_id).execute()
+        response = supabase.table("interaction").select("*").eq("agent_id", agent_id).execute()
     else:
-        response = supabase.table("Interaction").select("*").execute()
+        response = supabase.table("interaction").select("*").execute()
     return jsonify(response.data)
 
 
