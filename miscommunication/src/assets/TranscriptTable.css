@@ -12,7 +12,7 @@
 .header{
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 80px;
+    grid-template-columns: 1fr 1fr 180px;
     text-align: left;
     border: none;
     padding: 16px 24px;
@@ -24,13 +24,7 @@
 }
 .container {
     /* min-height: 100vh; */
-    height: 50rem;
-    width: 90rem;
-    align-self: center;
-    margin-left: auto;
-    margin-right: auto;
-    background: linear-gradient(to bottom right, #f8fafc, #e2e8f0);
-    padding: 32px;
+    width: 100%;
 }
 .wrapper {
     width: 100%;
@@ -40,7 +34,7 @@
 .rowButton{
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 80px;
+    grid-template-columns: 1fr 1fr 80px;
     padding: 16px 24px;
     text-align: left;
     border: none;
@@ -98,5 +92,10 @@
     margin: 0;
     white-space: pre-line;
     text-align: left;
+}
+.transcriptInfo{
+    width: 100%;
+    display: flex;
+    flex: row;
 }
 
