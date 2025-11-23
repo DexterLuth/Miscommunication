@@ -28,6 +28,8 @@ git clone git@github.com:DexterLuth/Miscommunication.git
 cd Miscommunication/miscommunication
 npm install
 ```
+## Demo of Project
+https://youtu.be/fqzuRlv4Ixg
 
 ## Project Structure
 ```
