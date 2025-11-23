@@ -59,7 +59,7 @@ function Stats() {
 
     const getStars = (rating) => {
         const stars = Math.round(rating);
-        return "⭐".repeat(Math.min(stars, 5));
+        return "⭐".repeat(Math.min(stars, 10));
     };
 
     if (loading) return <div className="loading">Loading statistics...</div>;

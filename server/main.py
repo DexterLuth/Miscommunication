@@ -8,7 +8,7 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel("gemini-flash-latest")
 
 # Read the prompt from prompt.txt
-with open("prompt.txt", "r", encoding="utf-8") as f:
+with open("script_new_10.txt", "r", encoding="utf-8") as f:
     conversation = f.read()
 
 output_files = ["Relevant.txt", "Clarity.txt", "Friendliness.txt", "Assurance.txt", "Accurate.txt", "response.txt"]
@@ -92,6 +92,9 @@ layer7_prompt = (
     "ASSURANCE:\n" + assurance_text + "\n\n"
     "ACCURATE:\n" + accurate_text + "\n\n"
     "STRUCTURE:\n" + structure_text + "\n\n"
+
+    "The last line of the output must be in this format:"
+    "Overall Score: X.YZ"
 )
 
 layer7_response = model.generate_content(layer7_prompt)
