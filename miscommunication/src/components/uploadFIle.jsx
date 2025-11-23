@@ -67,6 +67,18 @@ export default function UploadFile() {
             // Read the file content
             const fileContent = await selectedFile.text();
 
+            await fetch("http://127.0.0.1:5000/response", {
+                method:'POST',
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    file: fileContent
+                })
+            })
+            .then((res) => {console.log(res.json())})
+            .catch(err => {console.log(err)})
+
             // Insert the transcript into the interaction table
             const { data, error } = await supabase
                 .from('interaction')

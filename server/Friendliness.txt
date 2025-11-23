@@ -1,7 +1,5 @@
-**Score: 3 (Neutral/Professional)**
+**Score: 3** (Neutral/Professional)
 
 **Justification:**
 
-The banker is highly professional, polite (opening with "Good afternoon" and using clear conversational markers like "Great" and "Understood"), and remarkably transparent. They repeatedly emphasize avoiding surprises and providing a realistic view of terms and timelines.
-
-However, the tone remains strictly formal and transactional. The dialogue is dominated by technical jargon, regulatory warnings, and legal disclosures (non-binding, CIP, Regulation B, covenants). There is a complete lack of conversational warmth, enthusiasm, or personal approachability. The score reflects a high degree of respect and professionalism, but zero overt friendliness or relaxed interpersonal tone.
+The banker is highly **polite** and professional, using standard courteous language ("Good afternoon," "Great," clear acknowledgments). However, the tone is strictly formal, instructional, and focused on compliance, legal disclaimers, and risk constraints. There is a complete lack of **warmth** or personal approachability. The language is dense with regulatory jargon (CIP, Regulation B, debt-to-EBITDA, negative covenants). While the clarity is excellent for a business discussion, the tone itself does not convey a positive **interpersonal** connection or friendliness. The banker sounds like a highly competent, formal guide through a complex process.
