@@ -128,4 +128,3 @@ def processTranscript(transcript: str) -> float:
 
 if __name__ == "__main__":
     processTranscript()
-
