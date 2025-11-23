@@ -85,7 +85,7 @@ layer7_prompt = (
     "2) Normalize Friendliness to a 1-10 scale (multiply by 2).\n"
     "3) Compute the arithmetic average across the five normalized scores (clarity, friendliness_10, assurance, accurate, structure).\n"
     "4) Provide a brief (1-2 sentence) summary for each layer and a one-paragraph overall summary.\n"
-    "5) Output ONLY a JSON object with keys: clarity, friendliness_10, assurance, accurate, structure, average, summaries (an object with per-layer short summaries), overall_summary. Use numbers for numeric fields.\n\n"
+    "5) Output a small paragraph or maybe a few sentances as to where the issues lie in the conversation. If some of the scores are low, mention that but if most of the scores are really good then congradulate them\n\n"
     "Here are the layer outputs:\n\n"
     "CLARITY:\n" + clarity_text + "\n\n"
     "FRIENDLINESS:\n" + friendliness_text + "\n\n"

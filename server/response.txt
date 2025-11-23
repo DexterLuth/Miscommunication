@@ -1,18 +1,31 @@
-```json
-{
-  "clarity": 10,
-  "friendliness_10": 8,
-  "assurance": 4,
-  "accurate": 10,
-  "structure": 9,
-  "average": 8.2,
-  "summaries": {
-    "clarity": "The banker provided an exceptionally clear, structured, and compliant explanation, using accurate regulatory references (like CIP, FinCEN CDD, and Reg B) to justify all mandatory steps and constraints.",
-    "friendliness": "The banker maintained a highly professional and polite tone, proactively managing expectations and using positive framing, resulting in a strong score for professional approachability.",
-    "assurance": "Although clarity was high, the banker's effort to proactively ensure client understanding was low, relying passively on client affirmations rather than initiating specific comprehension checks for complex topics.",
-    "accurate": "The explanation was fully accurate, using precise banking terminology and correctly identifying all major regulatory obligations, standard loan structures (e.g., Term Loan/Revolver), and covenant requirements.",
-    "structure": "The explanation was organized exceptionally well, following a highly logical sequence from mandatory regulatory prerequisites to loan specifics, adhering strictly to an explicitly stated agenda."
-  },
-  "overall_summary": "The banker demonstrated extremely high competency in technical accuracy, clarity, and structural organization, effectively justifying all mandatory requirements and loan constraints through precise references to regulatory mandates and standard banking practice. While the delivery was highly professional and polite, the overall average was negatively impacted by the banker's low proactive effort in assurance; the banker failed to pause and verify the client's understanding of the complex financial and legal disclosures."
-}
-```
+## Layer Analysis and Overall Assessment
+
+| Layer | Extracted Score (Original Scale) | Normalized Score (1-10 Scale) | Summary |
+| :--- | :--- | :--- | :--- |
+| **Clarity** | 10 / 10 | 10.0 | The explanation was exceptionally clear and comprehensive, providing full transparency by explicitly citing regulatory requirements (like CIP and Regulation B) and internal constraints (leveraged lending guidance). |
+| **Friendliness** | 3 / 5 | 6.0 | While highly professional and respectful, the tone remained strictly formal and transactional, relying heavily on technical disclosures and lacking conversational warmth or enthusiasm. |
+| **Assurance** | 9 / 10 | 9.0 | The banker made strong efforts to ensure client understanding, consistently setting clear expectations, checking comprehension after discussing complex regulatory points, and concluding with confirmation that a realistic view was achieved. |
+| **Accurate** | 10 / 10 | 10.0 | The banker's explanation was fully accurate across all elements, precisely citing regulatory compliance requirements (Beneficial Ownership Rule, Reg B) and standard commercial loan structuring, collateral, and covenant practices. |
+| **Structure** | 10 / 10 | 10.0 | The conversation was highly organized and systematic, beginning with a clear roadmap, maintaining logical sequencing through mandatory disclosures, product definition, costs, and constraints, and concluding naturally with next steps. |
+
+***
+
+## Numeric Calculation
+
+1. **Normalized Scores:** 10, 6, 9, 10, 10
+2. **Sum of Normalized Scores:** $10 + 6 + 9 + 10 + 10 = 45$
+3. **Arithmetic Average:** $45 / 5 = 9.0$
+
+**Overall Average Score: 9.0**
+
+***
+
+## Overall Summary
+
+The overall performance was outstanding, achieving an exceptional average score of 9.0. The banker demonstrated expert-level competence across clarity, accuracy, assurance, and structure, ensuring the client received a comprehensive, compliant, and realistic overview of the complex lending process. The conversation successfully navigated mandatory regulatory disclosures (AML, Regulation B) and technical loan structuring without ambiguity or error, proactively managing timeline and leverage expectations while consistently confirming client understanding. The highest marks were achieved in the technical and structural components of the explanation.
+
+***
+
+## Areas for Improvement
+
+Congratulations are certainly in order for an exceptionally strong performance. The conversation excelled in nearly every measurable category, demonstrating regulatory accuracy, clarity, and highly professional structure. The only area for minor improvement lies in the interpersonal domain, specifically friendliness. While the banker was highly respectful and professional, integrating a slightly more conversational tone could enhance rapport and move the interaction beyond a purely transactional disclosure meeting, fostering a stronger client relationship alongside the robust technical disclosure.
