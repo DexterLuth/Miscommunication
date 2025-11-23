@@ -6,8 +6,9 @@ Entry into Hack Western 12.  A 32 hour hackathon located in London, Ontario.
 - <a href="#How To Run">How To Run </a>
 - <a href="#Building From Source"> Building From Source </a>
 - <a href="#Project Structure"> Project Structure</a>
+- <a href="#Dependencies">Dependencies</a>
 
-# Dependencies
+## Dependencies
 ```
 # .Env file inside of server folder.
 GEMINI_API_KEY="YOURKEY"
