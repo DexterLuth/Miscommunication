@@ -28,14 +28,16 @@ app.logger.setLevel(logging.INFO)
 # Send transcript to ai
 @app.route("/response", methods=["POST"])
 def post_transcript():
-    app.logger.info("Running")
-    transcript = request.get_json()
-    app.logger.info(f"Object received: {transcript}")
-    file = transcript.get("file")
-    app.logger.info(f"File: {file}")
-    score = processTranscript(file)
+    # app.logger.info("Running")
+    # transcript = request.get_json()
+    # app.logger.info(f"Object received: {transcript}")
+    # file = transcript.get("file")
+    # app.logger.info(f"File: {file}")
+    # score = int(processTranscript(file))
 
-    return jsonify({"response": "Uploaded!"})
+    return jsonify({
+        "output": 9,
+        })
 
 
 

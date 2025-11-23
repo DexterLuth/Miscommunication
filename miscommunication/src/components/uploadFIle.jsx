@@ -11,6 +11,7 @@ export default function UploadFile() {
     const [agents, setAgents] = useState([]);
     const [selectedAgent, setSelectedAgent] = useState('');
     const [loadingAgents, setLoadingAgents] = useState(true);
+    const [score, setScore] = useState(0);
 
     useEffect(() => {
         fetchAgents();
@@ -67,7 +68,7 @@ export default function UploadFile() {
             // Read the file content
             const fileContent = await selectedFile.text();
 
-            await fetch("http://127.0.0.1:5000/response", {
+            const output = await fetch("http://127.0.0.1:5000/response", {
                 method:'POST',
                 headers:{
                     "Content-Type": "application/json"
@@ -76,7 +77,8 @@ export default function UploadFile() {
                     file: fileContent
                 })
             })
-            .then((res) => {console.log(res.json())})
+            .then((res) => {console.log(res.body); res.json()})
+            .then((data) => {console.log(data); return data.output})
             .catch(err => {console.log(err)})
 
             // Insert the transcript into the interaction table
@@ -86,7 +88,7 @@ export default function UploadFile() {
                     {
                         transcript: fileContent,
                         date_added: new Date().toISOString(),
-                        score: null,
+                        score: output,
                         agent_id: selectedAgent
                     }
                 ])
