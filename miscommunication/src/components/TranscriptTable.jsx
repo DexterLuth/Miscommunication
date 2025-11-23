@@ -188,7 +188,8 @@ export default function TranscriptTable() {
       setLoading(true);
       const { data, error } = await supabase
         .from('interaction')
-        .select('*');
+        .select('*')
+        .order('date_added', { ascending: false, nullsFirst: false });
 
       if (error) throw error;
 

@@ -42,6 +42,7 @@ export default function UploadFile() {
                 .insert([
                     {
                         transcript: fileContent,
+                        date_added: new Date().toISOString(),
                         score: null, // You can set a default score or leave it null
                         agent_id: null // You can prompt for agent_id or leave it null
                     }
