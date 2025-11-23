@@ -1,3 +1,7 @@
+# MissComms
+Entry into Hack Western 12.  A 32 hour hackathon located in London, Ontario.  
+
+
 ## Table Of Contents
 - <a href="#How To Run">How To Run </a>
 - <a href="#Building From Source"> Building From Source </a>
