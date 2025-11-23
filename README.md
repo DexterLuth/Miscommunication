@@ -36,8 +36,9 @@ npm install
 |       ├── main.jsx            # Main page
 |       ├── App.jsx             # Home page
 |       └── supabaseClient.js   # Supabase pipeline
-└── server/              # Front end
+├── server/              # Front end
 |   ├── app.py            # API Endpoint
 |   └── main.py           # Multilayer AI
+└── README.md
   
 ```
