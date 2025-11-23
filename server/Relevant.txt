@@ -1,3 +1,3 @@
-*   **Relevance to the Question (Yes/No)?** **Yes**
+*   **Relevance to the Question (Yes/No)?** Yes
 
-*   **Explanation:** The client asked what information was needed to start the application process, and the banker provided a detailed, specific list of all required documents, including financial data, corporate papers, ownership identification (for CIP/beneficial ownership rules), and collateral information.
+*   **Explanation:** The client asked what the banker needs to start the process, and the banker responded by providing a detailed, specific list of all required financial documents, corporate records, and identification information necessary to initiate the due diligence and application phase.
