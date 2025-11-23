@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import TranscriptTable from './components/TranscriptTable.jsx'
 import Stats from './components/Stats.jsx'  
+import UploadFile from './components/uploadFIle.jsx'
 
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
@@ -14,6 +15,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />    
         <Route path="/transcripts" element={<TranscriptTable />} />
         <Route path="/stats" element={<Stats />} />
+        <Route path="/upload" element={<UploadFile />} />
+
       </Routes>
     </BrowserRouter>
   </StrictMode>,

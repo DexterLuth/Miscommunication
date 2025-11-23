@@ -21,6 +21,10 @@ function App() {
           <span className="icon">📊</span>
           <span>View Statistics</span>
         </button>
+        <button className= "upload-button" onClick={() => navigate('/upload')}>
+          <span className="icon">⬆️</span>
+          <span>Upload Data</span>
+        </button>
       </div>
 
       <div className="feature-grid">
