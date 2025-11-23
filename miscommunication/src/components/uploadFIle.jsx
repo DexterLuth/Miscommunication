@@ -13,6 +13,8 @@ export default function UploadFile() {
     const [loadingAgents, setLoadingAgents] = useState(true);
     const [score, setScore] = useState(0);
 
+    const [fileScore, setFileScore] = useState(null);
+
     useEffect(() => {
         fetchAgents();
     }, []);
@@ -68,27 +70,29 @@ export default function UploadFile() {
             // Read the file content
             const fileContent = await selectedFile.text();
 
-            const output = await fetch("http://127.0.0.1:5000/response", {
-                method:'POST',
-                headers:{
+            // Send to Flask for scoring
+            const scoreResponse = await fetch("http://127.0.0.1:5000/response", {
+                method: 'POST',
+                headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
                     file: fileContent
                 })
-            })
-            .then((res) => {console.log(res.body); res.json()})
-            .then((data) => {console.log(data); return data.output})
-            .catch(err => {console.log(err)})
+            });
 
-            // Insert the transcript into the interaction table
+            const scoreData = await scoreResponse.json();
+            const calculatedScore = parseFloat(scoreData.output);
+            setFileScore(calculatedScore);
+
+            // Insert the transcript into the interaction table with the score
             const { data, error } = await supabase
                 .from('interaction')
                 .insert([
                     {
                         transcript: fileContent,
                         date_added: new Date().toISOString(),
-                        score: output,
+                        score: calculatedScore,
                         agent_id: selectedAgent
                     }
                 ])
@@ -96,10 +100,12 @@ export default function UploadFile() {
 
             if (error) throw error;
 
-            setUploadStatus('✓ File uploaded successfully!');
+            setUploadStatus(`✓ File uploaded successfully! Score: ${calculatedScore.toFixed(2)}`);
+            
             setTimeout(() => {
                 navigate('/transcripts');
             }, 2000);
+            
         } catch (error) {
             console.error('Upload error:', error);
             setUploadStatus('✗ Upload failed: ' + error.message);
