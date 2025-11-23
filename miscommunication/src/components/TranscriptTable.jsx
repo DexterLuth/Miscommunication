@@ -105,6 +105,12 @@ function Entry(props) {
   const { callerid, agentid, transcript, safe } = props;
   const [open, setOpen] = useState(false);
 
+  const getScoreClass = (score) => {
+    if (score >= 7) return 'score-high';
+    if (score >= 5) return 'score-medium';
+    return 'score-low';
+  };
+
   return (
     <div className="wrapper">
       <button
@@ -118,6 +124,9 @@ function Entry(props) {
         <div className="cell agent-cell">
           <span className="cell-icon">🎧</span>
           <span className="cell-text agent-id-cell">{agentid}</span>
+        </div>
+        <div className={`cell score-cell ${getScoreClass(safe)}`}>
+          <span className="score-text">{safe.toFixed(1)}</span>
         </div>
         <div className="chevronCell">
           <ChevronDown
@@ -147,7 +156,7 @@ function Entry(props) {
               </div>
               <div className="meta-item">
                 <span className="meta-label">Safety Score:</span>
-                <span className={`meta-value score-${safe >= 7 ? 'high' : safe >= 5 ? 'medium' : 'low'}`}>
+                <span className={`meta-value ${getScoreClass(safe).replace('score-', 'score-')}`}>
                   {safe.toFixed(1)}/10
                 </span>
               </div>
@@ -177,7 +186,6 @@ export default function TranscriptTable() {
   const fetchTranscripts = async () => {
     try {
       setLoading(true);
-      // Remove the order by created_at since that column doesn't exist
       const { data, error } = await supabase
         .from('interaction')
         .select('*');
@@ -264,9 +272,10 @@ export default function TranscriptTable() {
               Agent ID
             </div>
             <div className="headerCell">
-              <span className="header-icon">⭐</span>
-                Score
+              <span className="header-icon">🛡️</span>
+              Score
             </div>
+            <div className="headerCell"></div>
           </div>
           {filteredTranscripts.map((item, index) => (
             <Entry

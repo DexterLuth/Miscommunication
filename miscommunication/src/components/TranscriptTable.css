@@ -127,7 +127,7 @@
 .header {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 180px;
+  grid-template-columns: 1fr 1fr 120px 80px;
   text-align: left;
   border: none;
   padding: 20px 28px;
@@ -156,7 +156,7 @@
 .rowButton {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 80px;
+  grid-template-columns: 1fr 1fr 120px 80px;
   padding: 20px 28px;
   text-align: left;
   border: none;
@@ -219,6 +219,42 @@
 
 .agent-cell {
   color: var(--primary-purple);
+}
+
+.score-cell {
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.score-text {
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 0.375rem 0.875rem;
+  border-radius: var(--radius-sm);
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid var(--primary-purple);
+  min-width: 70px;
+  text-align: center;
+}
+
+.score-high .score-text {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.score-medium .score-text {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.score-low .score-text {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: var(--error);
+  color: var(--error);
 }
 
 .agent-id-cell {
@@ -549,7 +585,7 @@
   
   .header,
   .rowButton {
-    grid-template-columns: 1.5fr 1fr 60px;
+    grid-template-columns: 1.5fr 1fr 100px 60px;
     padding: 16px 20px;
   }
   
@@ -571,9 +607,15 @@
   
   .header,
   .rowButton {
-    grid-template-columns: 2fr 1fr 50px;
+    grid-template-columns: 1.5fr 1fr 80px 50px;
     padding: 12px 16px;
     font-size: 0.875rem;
+  }
+
+  .score-text {
+    font-size: 0.9375rem;
+    padding: 0.25rem 0.625rem;
+    min-width: 40px;
   }
   
   .expandedContent.open {
