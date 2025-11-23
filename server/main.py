@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 import google.generativeai as genai
+import re
 
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
@@ -23,7 +24,7 @@ def run_layer(prompt, instruction, filename):
 # Layer 1: Extract intent, keywords
 layer1_instruction = (
     "1. Relevance to the Question (Yes/No)?\n"
-    "Evaluate whether the banker’s response directly addresses the client’s question. Answer only Yes or No. Ignore friendliness, tone, or partial explanations — focus strictly on whether the banker’s reply matches the client’s inquiry."
+    "Evaluate whether the banker’s response directly addresses the client’s question. Answer Yes or No and then breifly explain why. Ignore friendliness, tone, or partial explanations — focus strictly on whether the banker’s reply matches the client’s inquiry."
 )
 layer1_output = run_layer(conversation, layer1_instruction, "Relevant.txt")
 
@@ -37,7 +38,7 @@ layer2_output = run_layer(conversation, layer2_instruction, "Clarity.txt")
 # Layer 3: Get requirements
 layer3_instruction = (
     "3. Friendliness (Score 1–5)\n"
-    "Rate how friendly and approachable the banker sounded. Evaluate warmth, politeness, and positive interpersonal tone. Provide a score from 1 to 5, where 1 = unfriendly and 5 = very friendly."
+    "Rate how friendly and approachable the banker sounded. Evaluate warmth, politeness, and positive interpersonal tone. Provide a score from 1 to 5, where 1 = unfriendly and 5 = very friendly"
 )
 layer3_output = run_layer(conversation, layer3_instruction, "Friendliness.txt")
 
@@ -59,6 +60,47 @@ layer6_instruction = (
     "6. Structure of Explanation (Score 1–10)\n"
     "Rate how well the banker organized the explanation. Assess logical sequencing, coherence, clear step-by-step flow, and lack of topic jumping. Provide a score from 1 to 10, where 1 = poorly structured and 10 = highly structured."
 )
+
 layer6_output = run_layer(conversation, layer6_instruction, "Scruture.txt")
 
-print("Pipeline complete")
+# Layer 7: Let the model parse the layer outputs, normalize friendliness, compute average, and summarize
+def read_file_safe(path):
+    try:
+        with open(path, 'r', encoding='utf-8') as fh:
+            return fh.read()
+    except Exception:
+        return ''
+
+clarity_text = read_file_safe('Clarity.txt')
+friendliness_text = read_file_safe('Friendliness.txt')
+assurance_text = read_file_safe('Assurance.txt')
+accurate_text = read_file_safe('Accurate.txt')
+structure_text = read_file_safe('Scruture.txt')
+
+layer7_prompt = (
+    "You are an assistant that extracts numeric scores and a short summary from previous analysis outputs. "
+    "Inputs below are outputs from layers 2-6. Each output may include a numeric score and explanation.\n\n"
+    "Task:\n"
+    "1) Extract a single numeric score for each layer as follows: Clarity (1-10), Friendliness (1-5), Assurance (1-10), Accurate (1-10), Structure (1-10).\n"
+    "2) Normalize Friendliness to a 1-10 scale (multiply by 2).\n"
+    "3) Compute the arithmetic average across the five normalized scores (clarity, friendliness_10, assurance, accurate, structure).\n"
+    "4) Provide a brief (1-2 sentence) summary for each layer and a one-paragraph overall summary.\n"
+    "5) Output ONLY a JSON object with keys: clarity, friendliness_10, assurance, accurate, structure, average, summaries (an object with per-layer short summaries), overall_summary. Use numbers for numeric fields.\n\n"
+    "Here are the layer outputs:\n\n"
+    "CLARITY:\n" + clarity_text + "\n\n"
+    "FRIENDLINESS:\n" + friendliness_text + "\n\n"
+    "ASSURANCE:\n" + assurance_text + "\n\n"
+    "ACCURATE:\n" + accurate_text + "\n\n"
+    "STRUCTURE:\n" + structure_text + "\n\n"
+)
+
+layer7_response = model.generate_content(layer7_prompt)
+
+# Write the model's Layer 7 response directly to files
+with open('layer7.txt', 'w', encoding='utf-8') as out7:
+    out7.write(layer7_response.text)
+
+with open('response.txt', 'w', encoding='utf-8') as respf:
+    respf.write(layer7_response.text)
+
+print("Pipeline complete. Layer 7 written to layer7.txt and response.txt")
