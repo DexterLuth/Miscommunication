@@ -51,7 +51,7 @@ https://youtu.be/fqzuRlv4Ixg
 
 ## Project Structure
 ```
-├── miscommunication/    # Backend
+├── miscommunication/    # Frontend
 |   └──src/
 |       ├── components/
 |       |   ├── Stats.jsx                 # Agent statistics
@@ -60,7 +60,7 @@ https://youtu.be/fqzuRlv4Ixg
 |       ├── main.jsx            # Main page
 |       ├── App.jsx             # Home page
 |       └── supabaseClient.js   # Supabase pipeline
-├── server/              # Front end
+├── server/              # Backend
 |   ├── app.py            # API Endpoint
 |   └── main.py           # Multilayer AI
 └── README.md
