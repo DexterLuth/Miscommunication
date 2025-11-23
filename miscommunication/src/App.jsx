@@ -45,6 +45,13 @@ function App() {
             Built with modern tech for smooth performance and reliability
           </p>
         </div>
+        <div className="feature-card fade-in" style={{animationDelay: '0.3s'}}>
+          <span className="feature-icon">⚠️</span>
+          <h3 className="feature-title">Risk Detection</h3>
+          <p className="feature-description">
+            Catch potential mistakes before they become hazardous.
+          </p>
+        </div>
       </div>
     </div>
   )
