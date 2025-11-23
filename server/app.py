@@ -7,6 +7,8 @@ app = Flask(__name__)
 CORS(app)
 app.logger.setLevel(logging.INFO)
 
+
+
 # Send transcript to ai
 @app.route("/response", methods=["POST"])
 def post_transcript():

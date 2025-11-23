@@ -1,7 +1,0 @@
-The score for Assurance of Understanding is **7**.
-
-**Justification:**
-
-The Banker excels at **clear summarization and structuring** of complex information (e.g., outlining the process: structure, costs, collateral, covenants, and constraints; and the final steps: application, term sheet, approval). This proactive clarity significantly aids the client's comprehension. The Banker also provides a strong summary reinforcing the constraints regarding covenants and regulatory limits at the end of that section.
-
-However, the score is penalized because the Banker performs **zero active checks for understanding.** The Banker states regulatory requirements, pricing details, and covenant restrictions, but simply waits for the Client to respond passively with phrases like "Understood," "All clear," or "That makes sense." A higher score (8-10) would require the Banker to insert confirmation questions ("Do you have any questions on the indicative interest rate?" or "To ensure I was clear about covenants, does that framework meet your needs for future acquisitions?"). The Banker relies entirely on the client volunteering their understanding rather than actively soliciting clarification or confirming comprehension.
