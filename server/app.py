@@ -7,23 +7,7 @@ app = Flask(__name__)
 CORS(app)
 app.logger.setLevel(logging.INFO)
 
-# @app.route("/")
-# def home():
-#     return {"message": "Supabase + Flask connected!"}
 
-# @app.route("/agents", methods=["GET"])
-# def get_agents():
-#     response = supabase.table("agent").select("*").execute()
-#     return jsonify(response.data)
-
-# @app.route("/interactions", methods=["GET"])
-# def get_interactions():
-#     agent_id = request.args.get("agent_id")
-#     if agent_id:
-#         response = supabase.table("interaction").select("*").eq("agent_id", agent_id).execute()
-#     else:
-#         response = supabase.table("interaction").select("*").execute()
-#     return jsonify(response.data)
 
 # Send transcript to ai
 @app.route("/response", methods=["POST"])
