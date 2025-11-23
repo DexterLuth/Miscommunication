@@ -27,7 +27,7 @@ function DoughnutChart(props) {
         x={x}
         y={y}
         fill="white"
-        textAnchor={x > cx ? 'start' : 'end'}
+        textAnchor={x > cx ? 'center' : 'center'}
         dominantBaseline="central"
         style={{ fontSize: '20px', fontWeight: 'bold' }}
       >
@@ -62,7 +62,7 @@ function DoughnutChart(props) {
             </Pie>
             <Tooltip
               contentStyle={{
-                background: 'var(--bg-card)',
+                background: 'var(--ultra-light-purple)',
                 border: '1px solid var(--border)',
                 borderRadius: 'var(--radius-sm)',
                 color: 'var(--text-primary)'
@@ -263,7 +263,10 @@ export default function TranscriptTable() {
               <span className="header-icon">🎧</span>
               Agent ID
             </div>
-            <div className="headerCell"></div>
+            <div className="headerCell">
+              <span className="header-icon">⭐</span>
+                Score
+            </div>
           </div>
           {filteredTranscripts.map((item, index) => (
             <Entry
