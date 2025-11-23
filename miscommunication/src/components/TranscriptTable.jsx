@@ -7,14 +7,9 @@ import { supabase } from '../supabaseClient';
 
 function DoughnutChart(props) {
   const data = [
-    { name: 'Safe', value: parseInt(props.safe * 10) },
-    { name: 'Risky', value: parseInt((10 - props.safe) * 10) }
+    { name: 'Safe', value: parseInt(props.safe * 10), colour: '#10b981'},
+    { name: 'Risky', value: parseInt((10 - props.safe) * 10), colour: '#ef4444'}
   ];
-
-  const COLORS = {
-    Safe: '#10b981',
-    Risky: '#ef4444'
-  };
 
   const renderCustomLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }) => {
     const RADIAN = Math.PI / 180;
@@ -57,7 +52,7 @@ function DoughnutChart(props) {
               dataKey="value"
             >
               {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[entry.name]} />
+                <Cell key={`cell-${index}`} fill={entry.colour} />
               ))}
             </Pie>
             <Tooltip
@@ -67,6 +62,7 @@ function DoughnutChart(props) {
                 borderRadius: 'var(--radius-sm)',
                 color: 'var(--text-primary)'
               }}
+              content={data}
             />
             <Legend
               verticalAlign="bottom"
@@ -75,21 +71,22 @@ function DoughnutChart(props) {
               wrapperStyle={{
                 color: 'var(--text-secondary)'
               }}
+              content={data}
             />
           </PieChart>
         </div>
 
         <div className="stats-summary">
-          <div className="stat-summary-card" style={{ borderLeftColor: COLORS.Safe }}>
-            <div className="stat-summary-dot" style={{ backgroundColor: COLORS.Safe }}></div>
+          <div className="stat-summary-card" style={{ borderLeftColor: data[0].colour }}>
+            <div className="stat-summary-dot" style={{ backgroundColor: data[0].colour }}></div>
             <div>
               <p className="stat-summary-label">Safe Interactions</p>
               <p className="stat-summary-value">{data[0].value}%</p>
             </div>
           </div>
 
-          <div className="stat-summary-card" style={{ borderLeftColor: COLORS.Risky }}>
-            <div className="stat-summary-dot" style={{ backgroundColor: COLORS.Risky }}></div>
+          <div className="stat-summary-card" style={{ borderLeftColor: data[1].colour }}>
+            <div className="stat-summary-dot" style={{ backgroundColor: data[1].colour }}></div>
             <div>
               <p className="stat-summary-label">Risk Detected</p>
               <p className="stat-summary-value">{data[1].value}%</p>
