@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import './UploadFile.css';
@@ -8,6 +8,32 @@ export default function UploadFile() {
     const [selectedFile, setSelectedFile] = useState(null);
     const [uploading, setUploading] = useState(false);
     const [uploadStatus, setUploadStatus] = useState('');
+    const [agents, setAgents] = useState([]);
+    const [selectedAgent, setSelectedAgent] = useState('');
+    const [loadingAgents, setLoadingAgents] = useState(true);
+
+    useEffect(() => {
+        fetchAgents();
+    }, []);
+
+    const fetchAgents = async () => {
+        try {
+            setLoadingAgents(true);
+            const { data, error } = await supabase
+                .from('agent')
+                .select('id, first_name, last_name')
+                .order('first_name', { ascending: true });
+
+            if (error) throw error;
+
+            setAgents(data || []);
+        } catch (error) {
+            console.error('Error fetching agents:', error);
+            setUploadStatus('✗ Failed to load agents');
+        } finally {
+            setLoadingAgents(false);
+        }
+    };
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -29,6 +55,11 @@ export default function UploadFile() {
             return;
         }
 
+        if (!selectedAgent) {
+            setUploadStatus('✗ Please select an agent');
+            return;
+        }
+
         setUploading(true);
         setUploadStatus('Uploading...');
 
@@ -43,8 +74,8 @@ export default function UploadFile() {
                     {
                         transcript: fileContent,
                         date_added: new Date().toISOString(),
-                        score: null, // You can set a default score or leave it null
-                        agent_id: null // You can prompt for agent_id or leave it null
+                        score: null,
+                        agent_id: selectedAgent
                     }
                 ])
                 .select();
@@ -87,6 +118,30 @@ export default function UploadFile() {
                         Select a .txt file containing the conversation transcript
                     </p>
 
+                    {/* Agent Selection Dropdown */}
+                    <div className="agent-selection">
+                        <label htmlFor="agentSelect" className="agent-label">
+                            <span className="label-icon">🎧</span>
+                            Select Agent
+                        </label>
+                        <select
+                            id="agentSelect"
+                            value={selectedAgent}
+                            onChange={(e) => setSelectedAgent(e.target.value)}
+                            className="agent-select"
+                            disabled={loadingAgents || uploading}
+                        >
+                            <option value="">
+                                {loadingAgents ? 'Loading agents...' : '-- Choose an agent --'}
+                            </option>
+                            {agents.map((agent) => (
+                                <option key={agent.id} value={agent.id}>
+                                    {agent.first_name} {agent.last_name}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
                     <input
                         type="file"
                         id="fileInput"
@@ -116,7 +171,7 @@ export default function UploadFile() {
                         </div>
                     )}
 
-                    {selectedFile && (
+                    {selectedFile && selectedAgent && (
                         <button 
                             className="upload-submit-button" 
                             onClick={handleUpload}

@@ -28,6 +28,12 @@
   background: rgba(139, 92, 246, 0.15);
   border: 2px solid var(--primary-purple);
   backdrop-filter: blur(10px);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
 }
 
 .back-button:hover {
@@ -83,6 +89,63 @@
   color: var(--text-muted);
   font-size: 1.125rem;
   margin: 0;
+}
+
+/* Agent Selection Styles */
+.agent-selection {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.agent-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--light-purple);
+  text-align: left;
+}
+
+.label-icon {
+  font-size: 1.25rem;
+}
+
+.agent-select {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  background: var(--bg-elevated);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.agent-select:hover {
+  border-color: var(--primary-purple);
+}
+
+.agent-select:focus {
+  outline: none;
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.agent-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.agent-select option {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  padding: 0.5rem;
 }
 
 .select-file-button {
@@ -239,6 +302,10 @@
 
   .upload-heading {
     font-size: 1.5rem;
+  }
+
+  .agent-selection {
+    max-width: 100%;
   }
 
   .file-info {
