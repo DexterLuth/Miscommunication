@@ -12,10 +12,8 @@ app.logger.setLevel(logging.INFO)
 def post_transcript():
     app.logger.info("Running")
     transcript = request.get_json()
-    app.logger.info(f"Object received: {transcript}")
     file = transcript.get("file")
-    app.logger.info(f"File: {file}")
-    score = int(processTranscript(file))
+    score = processTranscript(file)
 
     return jsonify({"output": score})
 

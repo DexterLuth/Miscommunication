@@ -89,9 +89,9 @@ def processTranscript(transcript: str) -> float:
     # Call layers
     relevance = layer1(transcript)
     clarity = layer2(transcript)
-    assurance = layer4(transcript)
-    accurate = layer5(transcript)
-    structure = layer6(transcript)
+    assurance = layer3(transcript)
+    accurate = layer4(transcript)
+    structure = layer5(transcript)
 
     # Determine final output
     output = layer6(clarity, assurance, accurate, structure)

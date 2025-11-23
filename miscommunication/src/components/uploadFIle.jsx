@@ -11,7 +11,6 @@ export default function UploadFile() {
     const [agents, setAgents] = useState([]);
     const [selectedAgent, setSelectedAgent] = useState('');
     const [loadingAgents, setLoadingAgents] = useState(true);
-    const [score, setScore] = useState(0);
 
     const [fileScore, setFileScore] = useState(null);
 
