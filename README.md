@@ -11,6 +11,7 @@ Entry into Hack Western 12.  A 32 hour hackathon located in London, Ontario.
 ```
 # Front end
 cd miscommunication
+npm install
 npm run dev
 
 # Back end
