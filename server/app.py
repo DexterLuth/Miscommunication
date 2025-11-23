@@ -17,7 +17,7 @@ def post_transcript():
     app.logger.info(f"Object received: {transcript}")
     file = transcript.get("file")
     app.logger.info(f"File: {file}")
-    score = processTranscript(file)
+    score = int(processTranscript(file))
 
     return jsonify({"output": score})
 
