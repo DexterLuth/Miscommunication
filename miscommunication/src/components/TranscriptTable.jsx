@@ -128,7 +128,7 @@ function Entry(props) {
         <div className={`cell score-cell ${getScoreClass(safe)}`}>
           <span className="score-text">{safe.toFixed(1)}</span>
         </div>
-        <div className="chevronCell">
+        <div className={`chevronCell ${open} ? 'rotated' : ''`}>
           <ChevronDown
             className={`chevron ${open ? 'rotated' : ''}`}
           />
@@ -209,7 +209,7 @@ export default function TranscriptTable() {
   };
 
   function boldWords(text) {
-    const words = ['Client', 'Banker', 'Agent', 'Customer'];
+    const words = ['Client', 'Banker'];
     const regex = new RegExp(`\\b(${words.join("|")})\\b`, "gi");
 
     return text.split(regex).map((part, i) =>

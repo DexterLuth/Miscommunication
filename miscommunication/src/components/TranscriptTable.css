@@ -284,7 +284,6 @@
 
 .rowButton:hover .chevron {
   color: var(--accent-purple);
-  transform: translateX(4px);
 }
 
 .chevron.rotated {
