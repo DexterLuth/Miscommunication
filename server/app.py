@@ -35,7 +35,7 @@ def post_transcript():
     app.logger.info(f"File: {file}")
     score = processTranscript(file)
 
-    return jsonify({"response": "Uploaded!"})
+    return jsonify({"output": score})
 
 
 
